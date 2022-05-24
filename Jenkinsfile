@@ -3,6 +3,7 @@ agent any
 stages{
 stage("Pull Latest Image"){
 			steps{
+      cleanWs()
 				sh "docker pull codingeton/selenium-docker"
 			}
 		}
