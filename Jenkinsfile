@@ -3,8 +3,10 @@ agent any
 stages{
   stage("Start Grid"){
     steps{
+    withEnv(["PATH=$PATH:~/.local/bin"]){
       sh "docker-compose up -d hub chrome firefox"
     }
+  }
   }
   stage("Run Test"){
     steps{
